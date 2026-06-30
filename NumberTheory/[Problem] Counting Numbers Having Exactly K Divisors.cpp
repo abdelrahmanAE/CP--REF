@@ -1,3 +1,8 @@
+Constraints
+1 ≤ T < 31
+1 ≤ L ≤ R < 2^31
+1 ≤ K < 2^31
+
 #include<bits/stdc++.h>
 using namespace std;
 
