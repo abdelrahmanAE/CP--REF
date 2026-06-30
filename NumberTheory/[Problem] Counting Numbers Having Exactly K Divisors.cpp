@@ -1,3 +1,5 @@
+Calculating D(N) is a classical problem and there are many efficient algorithms for that. But what if you are asked to find something different? 
+Given a range and an integer K, can you find out for how many N in the given range, D(N) equals K?
 Constraints
 1 ≤ T < 31
 1 ≤ L ≤ R < 2^31
