@@ -24,3 +24,24 @@ void solve() {
         cout << cnt[x] << Endl
     }
 }
+---------------------------------
+
+Given a sequence **A** of **n** numbers, define **f(lo, hi)**, where **1 ≤ lo ≤ hi ≤ n**, as the Greatest Common Divisor (GCD) of all the numbers from **A[lo]** through **A[hi]**, inclusive.
+
+Note that **lo** and **hi** are indices, not values in the array.
+
+Given the array, consider every possible pair **(lo, hi)**. Determine how many **distinct** values of **f(lo, hi)** exist.
+    void solve() {
+    int n; cin >> n;
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) cin >> v[i];
+    set<int> currGcd, ans;
+    for (int i = 0; i < n; i++) {
+        set<int> nxt;
+        nxt.insert(v[i]);
+        for (int it : currGcd) nxt.insert(gcd(it, v[i]));
+        for (int it : nxt) ans.insert(it);
+        currGcd = move(nxt);
+    }
+    cout << ans.size() << Endl
+}
