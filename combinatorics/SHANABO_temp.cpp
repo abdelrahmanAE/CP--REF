@@ -280,7 +280,19 @@
  ll stars_bars(ll n, ll k) {
      return NCR(n + k - 1, k);
  }
-
+// lw adany constrain kbera zy 10e18 
+bool nCr(int n, int r, int limit) {
+    r = min(r, n - r);
+    __int128 ans = 1;
+    for (int i = 1; i <= r; ++i) {
+        ans = ans * (n - i + 1) / i;
+        if(ans >= limit) return 1;
+    }
+    return ans >= limit;
+}
+uses : This function calculates the mathematical combination $\binom{n}{r}$ (nCr) and checks 
+ if the result is greater than or equal to a specific limit. 
+ It is specifically designed to be fast and safe from integer overflow when dealing with massive numbers.
  ///////////////////////////////////////////////// Derangement
 
  // Use:
