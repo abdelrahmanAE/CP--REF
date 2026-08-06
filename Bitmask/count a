@@ -1,0 +1,17 @@
+Given a long integer x , count the number of values of a satisfying the following conditions:
+0 < a < x
+a ^ x > x
+queries and x up to 1e10
+void solve() {
+    int q; cin >> q;
+    while (q--) {
+        int x; cin >> x;
+        int ans = 0, cnt = 0;
+        while (x > 0) {
+            if((x & 1) == 0) ans += (1LL << cnt);
+            x >>= 1;
+            cnt++;
+        }
+        cout << ans << Endl
+    }
+}
